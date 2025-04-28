@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './WeatherComponent.css';
-import searchIcon from '../assets/search.png';
 import sunClearIcon from '../assets/clear.png';
 import humidityIcon from '../assets/humidity.png';
 import windIcon from '../assets/wind.png';
@@ -38,11 +37,11 @@ const WeatherComponent = () => {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${VITE_WEATHER_ID}&units=metric`;
 
     
-    const response = await fetch(url);
-    const data = await response.json();
-     console.log(data);
-     const firstItem = data.list[0];
-const icon = allIcons[firstItem.weather[0].icon] || sunClearIcon;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data);
+  const firstItem = data.list[0];
+  const icon = allIcons[firstItem.weather[0].icon] || sunClearIcon;
 setWeatherData({
   humidity: firstItem.main.humidity,
   windSpeed: firstItem.wind.speed,
@@ -72,7 +71,7 @@ setWeatherData({
         <div className="main-input">
         <input 
   type="text" 
-  placeholder="Search"
+  placeholder="Search..."
   value={searchInput}
   onChange={(e) => setSearchInput(e.target.value)}
   onKeyDown={(e) => {
