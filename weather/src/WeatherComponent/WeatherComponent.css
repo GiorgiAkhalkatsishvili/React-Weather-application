@@ -4,8 +4,6 @@
 }
 
 .weatherComponent .inner{
-  border: solid 1px #3b0b68;
-  background-color: #3b0b68;
   color: #fff;
   padding: 30px 40px;
   border-radius: 10px;
@@ -114,4 +112,38 @@ font-size: 18px;
 .inner .second-column img{
   width: 30px;
   height: 30px;
+}
+
+@media only screen and (max-width: 450px){
+  .weatherComponent .inner{
+padding: 25px;
+  }
+  .inner .main-input input{
+max-width: 200px;
+width: 100%;
+  }
+
+  .inner .main-input .search-svg {
+      background-color: #fff;
+      border: solid 1px #fff;
+      border-radius: 50%;
+      padding: 12px;
+      cursor: pointer;
+    }
+  
+    .inner .main-input svg {
+      display: flex;
+      justify-content: unset;
+      align-items: unset;
+      width: 18px;
+    }
+
+ .inner .first-column img{
+  width: 25px;
+  height: 25px;
+ }
+
+.inner .second-column .texts span{
+font-size: 16px;
+}
 }
